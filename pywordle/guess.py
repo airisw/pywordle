@@ -3,9 +3,9 @@ from PyDictionary import PyDictionary
 dictionary = PyDictionary()
 
 class Guess():
-    def __init__(self, player, guess=None):
+    def __init__(self, player, word=None):
         self.player = player
-        self.guess = None if guess is None else guess
+        self.word = None if word is None else word
         self.GREEN_LETTERS = 0
         self.MAX_ATTEMPTS = 6
 
@@ -20,8 +20,8 @@ class Guess():
     def validate(self):
         MAX_LETTERS = 5
 
-        if dictionary.meaning(self.guess, 
-                        disable_errors=True) and len(self.guess) == MAX_LETTERS:
+        if dictionary.meaning(self.word, 
+                        disable_errors=True) and len(self.word) == MAX_LETTERS:
             return True
         
         return False

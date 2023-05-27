@@ -22,11 +22,11 @@ def main():
 
         if not player_guess.validate():
             print("Enter a valid word with 5 letters")
-        elif player_guess.guess in guesses:
+        elif player_guess.word in guesses:
             print("You already guessed this word")
         else:
             player.lost_attempt()
-            guesses.append(player_guess.guess)
+            guesses.append(player_guess.word)
             position_map = check_letters(player_guess, word)
             print_answer(position_map, player_guess)
 
@@ -44,11 +44,11 @@ def main():
 
 def check_letters(player_guess, word):
     position_map = {i: None for i in range(5)}
-    for i in range(len(player_guess.guess)):
-        if player_guess.guess[i] == word.random_word[i]:
+    for i in range(len(player_guess.word)):
+        if player_guess.word[i] == word.random_word[i]:
             position_map[i] = "green"
             player_guess.correct_letters()
-        elif player_guess.guess[i] in word.random_word:
+        elif player_guess.word[i] in word.random_word:
             position_map[i] = "yellow"
     
     return position_map
@@ -56,11 +56,11 @@ def check_letters(player_guess, word):
 def print_answer(position_map, player_guess):
     for i in position_map:
         if not position_map[i]:
-            print(player_guess.guess[i], end="")
+            print(player_guess.word[i], end="")
         elif position_map[i] == "green":
-            print(colored(player_guess.guess[i], "green"), end="")
+            print(colored(player_guess.word[i], "green"), end="")
         else:
-            print(colored(player_guess.guess[i], "yellow"), end="")
+            print(colored(player_guess.word[i], "yellow"), end="")
 
 if __name__ == "__main__":
     main()
