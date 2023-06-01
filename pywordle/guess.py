@@ -2,9 +2,8 @@ from PyDictionary import PyDictionary
 
 dictionary = PyDictionary()
 
-class Guess():
-    def __init__(self, player, word=None):
-        self.player = player
+class Guess:
+    def __init__(self, word=None):
         self.word = None if word is None else word
         self.GREEN_LETTERS = 0
         self.MAX_ATTEMPTS = 6
@@ -15,7 +14,7 @@ class Guess():
     @classmethod
     def get_guess(cls):
         new_guess = input("Guess word: ").lower().strip()
-        return Guess(None, new_guess)
+        return Guess(new_guess)
     
     def validate(self):
         MAX_LETTERS = 5
