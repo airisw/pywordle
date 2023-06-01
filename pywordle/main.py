@@ -1,6 +1,6 @@
-from word import Word
-from player import Player
-from guess import Guess
+from pywordle.word import Word
+from pywordle.player import Player
+from pywordle.guess import Guess
 from PyDictionary import PyDictionary
 from termcolor import colored
 
@@ -12,7 +12,7 @@ def main():
 
     word = Word()
     player = Player()
-    guess = Guess(Player)
+    guess = Guess()
 
     guesses = []
 
@@ -56,7 +56,7 @@ def check_letters(player_guess, word):
 def print_answer(position_map, player_guess):
     for i in position_map:
         if not position_map[i]:
-            print(player_guess.word[i], end="")
+            print(colored(player_guess.word[i], "red"), end="")
         elif position_map[i] == "green":
             print(colored(player_guess.word[i], "green"), end="")
         else:
