@@ -1,10 +1,7 @@
 from .word import Word
 from .player import Player
 from .guess import Guess
-from PyDictionary import PyDictionary
 from termcolor import colored
-
-dictionary = PyDictionary()
 
 def main():
     print("Welcome to PyWordle")
