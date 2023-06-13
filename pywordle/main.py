@@ -1,6 +1,6 @@
-from pywordle.word import Word
-from pywordle.player import Player
-from pywordle.guess import Guess
+from .word import Word
+from .player import Player
+from .guess import Guess
 from PyDictionary import PyDictionary
 from termcolor import colored
 
