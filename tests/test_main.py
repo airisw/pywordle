@@ -1,5 +1,5 @@
 import pytest
-from pywordle.main import check_letters
+from pywordle.helpers import check_letters
 from pywordle.word import Word
 from pywordle.guess import Guess
 

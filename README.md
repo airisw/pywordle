@@ -36,7 +36,7 @@ pip install -r requirements.txt
 
 5. Run the program:
 ```
-python -m pywordle.main
+python game.py
 ```
 
 ## How It Works
